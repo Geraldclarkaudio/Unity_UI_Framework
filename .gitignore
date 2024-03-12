@@ -70,3 +70,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+#PAID ASSETS
+
+ModularGameUIKit/*
+/[Aa]ssets/UI Kit Pro - Big Bundle/*
+/[Aa]ssets/Art/Layer Lab/*
+/[Aa]ssets/Art/25 sprite effects/* 
+/[Aa]ssets/Art/Slash sprite effects/* 
