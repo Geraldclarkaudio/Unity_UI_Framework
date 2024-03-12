@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueID: 0
   lines:
-  - My math skills are fuckin CLAWTCH!
-  - 'No they''re not. '
+  - Be prepared to lose!
+  - 'You will never defeat me! '
   icons:
   - {fileID: 21300000, guid: 945c719ebed5c44b9b6ba15196ee3ff0, type: 3}
   - {fileID: 21300000, guid: d539bf41702a74b6b880ac4e8c0b40d7, type: 3}
