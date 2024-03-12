@@ -64,9 +64,12 @@ public class DialogueManager : MonoBehaviour
             else if(_mathGameManager._gameWon == true)
             {
                 _mathGameManager._gameWon = false;
+                //play attack animations then start a new game. 
+                _mathGameManager.PlayerAttack();
+               
                 _mathGameManager.StartMathGame();
+                mathGameCanvas.enabled = true;
             }
-
         }
     }
 }

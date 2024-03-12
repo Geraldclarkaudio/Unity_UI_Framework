@@ -18,9 +18,10 @@ public class MathGameManager : MonoBehaviour
     private int randomAnswerIndex;
 
     public bool _gameWon;
-
+    private Player _player;
     private void Start()
     {
+        _player = FindAnyObjectByType<Player>();
        randomAnswerIndex = Random.Range(0, _answerText.Length);
         StartMathGame();
     }
@@ -53,5 +54,9 @@ public class MathGameManager : MonoBehaviour
                 _answerText[i].text = Random.Range(0, 300).ToString();
             }
         }     
+    }
+    public void PlayerAttack()
+    {
+        _player.PlayAnimation("Attack");
     }
 }

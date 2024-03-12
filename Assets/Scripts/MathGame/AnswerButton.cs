@@ -19,13 +19,16 @@ public class AnswerButton : MonoBehaviour
 
     DialogueManager _dialogueManager;
     MathGameManager _mathGameManager;
-
     // Start is called before the first frame update
     void Start()
     {
         _originalPos = transform.position;
         _dialogueManager = FindObjectOfType<DialogueManager>();
         _mathGameManager = FindObjectOfType<MathGameManager>();
+    }
+    public void MoveBackToOriginalPos()
+    {
+        _thisRectTrans.transform.DOMove(_originalPos, 0f);
     }
 
     public void Clicked()
@@ -50,20 +53,20 @@ public class AnswerButton : MonoBehaviour
 
         if( _correctAnswer )
         {
-            Debug.Log("Trigger Short Dialogue and character animations.");
+            Debug.Log("Trigger celebration particles");
             _winParticleSystem.Play();
-            StartCoroutine(StartNewDialogue());
-            //deduct enemy health etc. 
+            StartCoroutine(StartNewDialogue()); // wait a sec to start a new dialogue 
         }
         else
         {
-            Debug.Log("Enemy says something and character anims");
+            Debug.Log("Enemy says something");
             ///deduct player health
         }
     }
     IEnumerator StartNewDialogue()
     {
         yield return new WaitForSeconds(1.0f);
+        MoveBackToOriginalPos();
         _dialogueManager.StartDialgoue();
     }
 }
