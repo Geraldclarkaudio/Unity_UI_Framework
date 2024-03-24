@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,8 +14,14 @@ public class Enemy : MonoBehaviour
     private Slider _enemyHealthSlider;
     [SerializeField]
     private Player _player;
+
+    public static Action OnDefeat;
+
+    private ProfileManager _profileManager;
+
     private void Start()
     {
+        _profileManager = FindObjectOfType<ProfileManager>();
         _health = 3;
     }
     public void PlayAnimation(string animationToPlay)
@@ -38,10 +45,12 @@ public class Enemy : MonoBehaviour
     {
         _health--;
         _enemyHealthSlider.value = _health;
-        if (_health <= 1)
+        if (_health < 1)
         {
-            Debug.Log("You Win");
-            //do some win game stuff 
+            //set score in profile. +1 
+            _profileManager.IncreaseScore();
+            //unload math game. Load results canvas 
+            OnDefeat?.Invoke();
         }
     }
 }

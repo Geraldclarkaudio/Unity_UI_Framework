@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-
+/// <summary>
+/// This class is intended to handle math game logic. Creating the numbers to add and creating the answers to use. 
+/// It is also meant to keep track of how many questions the player got right and wrong. 
+/// </summary>
 public class MathGameManager : MonoBehaviour
 {
     public int a;
@@ -16,25 +17,29 @@ public class MathGameManager : MonoBehaviour
     public TMP_Text[] _answerText;
 
     private int randomAnswerIndex;
-
-    public bool _gameWon;
+    public int turn;
+    public bool _turnWon;
     private Player _player;
+    private Enemy _enemy;
+
     private void Start()
     {
-        _player = FindAnyObjectByType<Player>();
-       randomAnswerIndex = Random.Range(0, _answerText.Length);
+        turn = 0;
+        _player = FindObjectOfType<Player>();
+        _enemy = FindObjectOfType<Enemy>();
+        randomAnswerIndex = UnityEngine.Random.Range(0, _answerText.Length);
         StartMathGame();
     }
     public void StartMathGame()
     {
-        _gameWon = false;
+        _turnWon = false;
         CreateRandomNumbers();// creates random numbers to add together. 
         CreateAnswers(); // creates answers based off those random numbers
     }
     public void CreateRandomNumbers()
     {
-        a = Random.Range(0, 100);
-        b = Random.Range(0, 100);
+        a = UnityEngine.Random.Range(0, 100);
+        b = UnityEngine.Random.Range(0, 100);
     
         _number1Text.text = a.ToString();
         _number2Text.text = b.ToString();
@@ -51,12 +56,16 @@ public class MathGameManager : MonoBehaviour
         {
             if(i != randomAnswerIndex)
             {
-                _answerText[i].text = Random.Range(0, 300).ToString();
+                _answerText[i].text = UnityEngine.Random.Range(0, 300).ToString();
             }
         }     
     }
     public void PlayerAttack()
     {
         _player.PlayAnimation("Attack");
+    }
+    public void EnemyAttack()
+    {
+        _enemy.PlayAnimation("Attack");
     }
 }

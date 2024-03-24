@@ -1041,7 +1041,8 @@ MonoBehaviour:
   - {fileID: 8820131371633376988}
   - {fileID: 6325427169339148170}
   - {fileID: 1472366173019761681}
-  _gameWon: 0
+  turn: 0
+  _turnWon: 0
 --- !u!1 &2248696606446791433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,8 +1466,7 @@ MonoBehaviour:
   _dialogues:
   - {fileID: 11400000, guid: 4badb959b508f724cb4d75a4ddf9383d, type: 2}
   - {fileID: 11400000, guid: f43b0f36cfb8f8c45bc3bca1af8a5f7a, type: 2}
-  - {fileID: 11400000, guid: f43b0f36cfb8f8c45bc3bca1af8a5f7a, type: 2}
-  - {fileID: 11400000, guid: f43b0f36cfb8f8c45bc3bca1af8a5f7a, type: 2}
+  - {fileID: 11400000, guid: 37a964b97a75a6949b76b47478809ce6, type: 2}
   currentDialogue: {fileID: 0}
   keyIndex: 0
   dialogueIndex: 0
@@ -4587,7 +4587,7 @@ MonoBehaviour:
   _health: 0
   _anim: {fileID: 8354564530648453521}
   _enemyHealthSlider: {fileID: 6224452172914062388}
-  _player: {fileID: 0}
+  _player: {fileID: 5598748831618155695}
 --- !u!1001 &7274708402381086902
 PrefabInstance:
   m_ObjectHideFlags: 0

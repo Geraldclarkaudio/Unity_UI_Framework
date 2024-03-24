@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 /// <summary>
@@ -31,10 +32,8 @@ public class ProfileManager : MonoBehaviour
 
     public void IncreaseScore()
     {
-        profiles[selectedProfileIndex].level = 1;
+        profiles[selectedProfileIndex].level ++;
         PlayerPrefs.SetInt("CurrentLevel", profiles[selectedProfileIndex].level);
         PlayerPrefs.Save();
     }
-
-    // Other functions: CreateProfile, DeleteProfile, etc.
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     [SerializeField]
-    Dialogue[] _dialogues;
+    public Dialogue[] _dialogues;
 
     public Dialogue currentDialogue;
     public int keyIndex; // which index of the keys for that dialogue
@@ -25,6 +25,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        currentDialogue = _dialogues[0];
         _mathGameManager = FindAnyObjectByType<MathGameManager>();
         StartDialgoue();
     }
@@ -34,6 +35,20 @@ public class DialogueManager : MonoBehaviour
     {
         mathGameCanvas.enabled = false;
         currentDialogue = _dialogues[dialogueIndex];
+        
+        if(_mathGameManager.turn != 0)
+        {
+            if (_mathGameManager._turnWon == true)
+            {
+                currentDialogue = _dialogues[1];
+            }
+            else
+            {
+                currentDialogue = _dialogues[2];
+            }
+        }
+
+
         keyIndex = 0;//reset keys back to 0
         dialogueIndex = currentDialogue.dialogueID;
         dialogueIsActive = true;
@@ -54,22 +69,27 @@ public class DialogueManager : MonoBehaviour
         else if (keyIndex >= currentDialogue.lines.Length - 1)
         {
             dialogueGameObject.SetActive(false);
-            dialogueIndex++;
+            //dialogueIndex++;
             dialogueIsActive = false;
 
-            if(_mathGameManager._gameWon == false)
+            //won turn? 
+            //play attack animations 
+            //start new dialogue
+
+            if(_mathGameManager._turnWon == false)
             {
-                mathGameCanvas.enabled = true;
+                if(_mathGameManager.turn != 0)
+                {
+                    _mathGameManager.EnemyAttack();
+                }
             }
-            else if(_mathGameManager._gameWon == true)
+            else if(_mathGameManager._turnWon == true)
             {
-                _mathGameManager._gameWon = false;
-                //play attack animations then start a new game. 
+                _mathGameManager._turnWon = false;
                 _mathGameManager.PlayerAttack();
-               
-                _mathGameManager.StartMathGame();
-                mathGameCanvas.enabled = true;
             }
+            _mathGameManager.StartMathGame();
+            mathGameCanvas.enabled = true;
         }
     }
 }

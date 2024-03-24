@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Enemy _enemy;
 
+    public static Action OnDefeat;
     private void Start()
     {
         _health = 3;
@@ -41,9 +43,9 @@ public class Player : MonoBehaviour
     {
         _health--;
         _playerHealthSlider.value = _health;   
-        if(_health < 0 )
+        if(_health < 1 )
         {
-            Debug.Log("You Lose");
+            OnDefeat?.Invoke();
         }
     }
 }

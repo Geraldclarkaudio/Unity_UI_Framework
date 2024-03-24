@@ -34,34 +34,33 @@ public class AnswerButton : MonoBehaviour
     public void Clicked()
     {
         _thisRectTrans.transform.DOMove(_questionMarkPos.transform.position, 0.5f);
-
+        _mathGameManager.turn++;
         if(_correctAnswer )
-        {
-            _mathGameManager._gameWon = true;
-            Debug.Log("CORRECT");
+        {//won the turn
+            _mathGameManager._turnWon = true;
         }
         else
-        {
-            Debug.Log("WRONG");
+        {//lost the turn. 
+            _mathGameManager._turnWon= false;
         }
+
         StartCoroutine(WaitForAnswerMove());
     }
 
     IEnumerator WaitForAnswerMove()
     {
         yield return new WaitForSeconds(0.75f);
-
-        if( _correctAnswer )
-        {
-            Debug.Log("Trigger celebration particles");
+        //progress game forward after answer makes it to the ? location. 
+        if ( _correctAnswer )
+        { 
             _winParticleSystem.Play();
-            StartCoroutine(StartNewDialogue()); // wait a sec to start a new dialogue 
         }
         else
         {
-            Debug.Log("Enemy says something");
-            ///deduct player health
+            
         }
+        //start dialogue
+        StartCoroutine(StartNewDialogue());
     }
     IEnumerator StartNewDialogue()
     {

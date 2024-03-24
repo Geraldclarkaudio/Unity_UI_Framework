@@ -13,9 +13,20 @@ public class CanvasManager : MonoBehaviour
     private AsyncOperationHandle<GameObject> _loadOp;
     private AsyncOperationHandle<GameObject> _instantiateOp;
 
+    private void OnEnable()
+    {
+        Enemy.OnDefeat += GoToResults;
+        Player.OnDefeat += GoToResults;
+    }
     private void Start()
     {
         LoadCanvas("TitleCanvas");
+    }
+
+    public void GoToResults()
+    {
+        DisableCurrentCanvases();
+        EnableAppropriateCanvases("ResultsCanvas");
     }
     public void SetCurrentCanvas(GameObject currentCanvas)
     {

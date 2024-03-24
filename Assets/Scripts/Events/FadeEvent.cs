@@ -9,6 +9,11 @@ public class FadeEvent : MonoBehaviour
     [SerializeField]
     private Animator _anim;
 
+    private void OnEnable()
+    {
+        Enemy.OnDefeat += FadeOut;
+        Player.OnDefeat += FadeOut;
+    }
     private void Awake()
     {
         Invoke("FadeIn", 1.0f); //go from black to 0
