@@ -6,5 +6,6 @@ public class ProfileData : ScriptableObject
     public Sprite avatar;
     public string profileName;
     public int level;
+    public int ID;
     // Add other profile-related data here
 }

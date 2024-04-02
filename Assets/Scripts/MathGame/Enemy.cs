@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
         if (_health < 1)
         {
             //set score in profile. +1 
-            _profileManager.IncreaseScore();
+            _profileManager.IncreaseLevel();
             //unload math game. Load results canvas 
             OnDefeat?.Invoke();
         }

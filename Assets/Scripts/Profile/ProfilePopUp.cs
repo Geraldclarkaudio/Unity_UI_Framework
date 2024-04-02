@@ -14,12 +14,15 @@ public class ProfilePopUp : MonoBehaviour
     private Slider _profileLevelSlider;
     [SerializeField]
     private TMP_Text _profileLevel;
+    [SerializeField]
+    private int _profileID;
+    private Animator _animator;
 
-    Animator _animator;
     private void Start()
     {
         _animator = GetComponent<Animator>();
     }
+
     public void SetPopUpData(Sprite profileAvatar, string profileName, int sliderValue, int profileLevel)
     {
         _avatar.sprite = profileAvatar;

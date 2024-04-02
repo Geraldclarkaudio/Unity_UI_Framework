@@ -8,7 +8,7 @@ public class ProfileManager : MonoBehaviour
 {
     public ProfileData[] profiles; // Array of profile data
     [SerializeField]
-    private int selectedProfileIndex = 0;
+    public int selectedProfileIndex = 0;
 
     public void SelectProfile(int index)
     {
@@ -17,23 +17,31 @@ public class ProfileManager : MonoBehaviour
         //Since this is a persistant class, I dont want to store a reference to this since
         //it'll be destroyed once the scene changes to the game scene. 
         ProfilePopUp _profilePopUp = FindObjectOfType<ProfilePopUp>(true);
+        ProfilePlayButton _profilePlayButton = FindObjectOfType<ProfilePlayButton>(true);
+
         if (_profilePopUp != null)
         {
             _profilePopUp.gameObject.SetActive(true);
-            _profilePopUp.SetPopUpData(profiles[selectedProfileIndex].avatar, 
+            _profilePopUp.SetPopUpData(profiles[selectedProfileIndex].avatar,
                                        profiles[selectedProfileIndex].profileName,
-                                       profiles[selectedProfileIndex].level, 
+                                       profiles[selectedProfileIndex].level,
                                        profiles[selectedProfileIndex].level);
         }
 
-        // Load saved data for the selected profile (e.g., score)
-        // Update UI to display profile info
+        _profilePlayButton.ID = profiles[selectedProfileIndex].ID;
     }
 
-    public void IncreaseScore()
+    public void IncreaseLevel() //math game
     {
         profiles[selectedProfileIndex].level ++;
         PlayerPrefs.SetInt("CurrentLevel", profiles[selectedProfileIndex].level);
+        PlayerPrefs.Save();
+    }
+
+    public void IncreaseScore() // matching Game
+    {
+        profiles[selectedProfileIndex].level++;
+        PlayerPrefs.SetInt("CurrentScore", profiles[selectedProfileIndex].level);
         PlayerPrefs.Save();
     }
 }

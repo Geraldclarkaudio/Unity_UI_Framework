@@ -91,19 +91,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2981977475758500171}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3419504255304293674}
-        m_TargetAssemblyTypeName: ProfilePlayButton, Assembly-CSharp
-        m_MethodName: LoadAppropriateScene
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &3419504255304293674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,6 +104,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 917242a7568cae14d8c0f0bfc59ad73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _profileButtons:
+  - {fileID: 8283044296810162526}
+  - {fileID: 2674244868551296154}
+  - {fileID: 6968617839272652625}
 --- !u!1 &2006819479993514708
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +287,7 @@ MonoBehaviour:
   _profileName: {fileID: 5008739679423509354}
   _profileLevelSlider: {fileID: 2266065915438472329}
   _profileLevel: {fileID: 738726506485409787}
+  _profileID: 0
 --- !u!1 &2368716708904174681
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,7 +986,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profileManager: {fileID: 0}
+  _button: {fileID: 7599154683853939883}
   profileID: 1
+  currentProfile: 0
 --- !u!1 &5615770521689568910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1136,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profileManager: {fileID: 0}
+  _button: {fileID: 3950362521539422468}
   profileID: 2
+  currentProfile: 0
 --- !u!1 &5640776395798189724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,7 +1784,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profileManager: {fileID: 0}
+  _button: {fileID: 3726111137352353622}
   profileID: 0
+  currentProfile: 0
 --- !u!1 &8849257580204922365
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a837d4ff09778b443827b41d30819e13, type: 3}
-  m_Name: Profile1
+  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
+  m_Name: MatchingGame_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  avatar: {fileID: 21300000, guid: f9cea3b73b85d4b28aef1a91422c7477, type: 3}
-  profileName: Profile 1
-  level: 0
-  ID: 0
+  m_Group: {fileID: 11400000, guid: 0373f582486e9264ea1445f267fe7f64, type: 2}
+  m_StaticContent: 0

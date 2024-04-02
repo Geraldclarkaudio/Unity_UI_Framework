@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,14 +8,23 @@ public class ProfileButton : MonoBehaviour
 {
     [SerializeField]
     private ProfileManager profileManager;
-    private Button _button;
     [SerializeField]
-    private int profileID;
+    private Button _button;
+
+    public int profileID;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         profileManager = FindObjectOfType<ProfileManager>();
-        _button = GetComponent<Button>();
+    }
+
+    private void OnEnable()
+    {
         _button.onClick.AddListener(() => profileManager.SelectProfile(profileID));
+    }
+    private void OnDisable()
+    {
+        _button.onClick.RemoveListener(() => profileManager.SelectProfile(profileID));
     }
 }

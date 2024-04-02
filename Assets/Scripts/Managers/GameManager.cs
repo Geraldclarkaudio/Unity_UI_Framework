@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool gameWon;
-
+    ProfileManager profileManager;
     private void OnEnable()
     {
         Enemy.OnDefeat += WinGame;
@@ -19,5 +19,10 @@ public class GameManager : MonoBehaviour
     public void LoseGame()
     {
         gameWon = false;
+    }
+
+    private void Start()
+    {
+        profileManager = FindObjectOfType<ProfileManager>();    
     }
 }

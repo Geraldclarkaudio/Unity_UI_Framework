@@ -14,7 +14,7 @@ public class TestButton : MonoBehaviour
 
     public void ScoreUp()
     {
-        profileManager.IncreaseScore();
+        profileManager.IncreaseLevel();
     }
     
     
