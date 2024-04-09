@@ -10,16 +10,21 @@ public class SaveManager : MonoBehaviour
     void Awake()
     {   
         profileManager = FindObjectOfType<ProfileManager>();
-        int loadedLevel = PlayerPrefs.GetInt("CurrentLevel", 
-            profileManager.profiles[profileManager.selectedProfileIndex].level);
     }
 
     private void OnApplicationQuit()
     {
+        PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].level);
+        PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].level);
         PlayerPrefs.Save();
     }
     private void OnApplicationPause(bool paauseStatus)
     {
-        PlayerPrefs.Save();
+        if (paauseStatus )
+        {
+            PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].level);
+            PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].level);
+            PlayerPrefs.Save();
+        }
     }
 }

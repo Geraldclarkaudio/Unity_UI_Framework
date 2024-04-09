@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: BubbleGame
+  m_EditorClassIdentifier: 
+  m_GroupName: BubbleGame
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ee36052f2c7432841887b067705745dd
+  m_SerializeEntries:
+  - m_GUID: baa5ce39015f0a44eb591c8e8ed435f3
+    m_Address: Bubble_Game
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Bubble
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 2dfdefa2684a42c4399324c2682b79d3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 053f3532a1b487844ab15cb8ee1aa5c6, type: 2}
+    - {fileID: 11400000, guid: 84669c9e22266884eb2556f28e420fc7, type: 2}

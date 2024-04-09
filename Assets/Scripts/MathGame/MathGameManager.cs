@@ -22,12 +22,17 @@ public class MathGameManager : MonoBehaviour
     private Player _player;
     private Enemy _enemy;
 
+    [SerializeField]
+    private AnswerButton _currentAnswerButton;
+
+    [SerializeField]
+    private AudioClip[] _attackSound;
     private void Start()
     {
         turn = 0;
         _player = FindObjectOfType<Player>();
         _enemy = FindObjectOfType<Enemy>();
-        randomAnswerIndex = UnityEngine.Random.Range(0, _answerText.Length);
+        
         StartMathGame();
     }
     public void StartMathGame()
@@ -47,10 +52,22 @@ public class MathGameManager : MonoBehaviour
 
     public void CreateAnswers()
     {
+        //if the currentAnswerButton has already been assigned
+        if(_currentAnswerButton != null)
+        {//set it false
+            _currentAnswerButton._correctAnswer = false;
+        }
+        //pick a random answer
+        randomAnswerIndex = UnityEngine.Random.Range(0, _answerText.Length);
+        //set c = a+b
         c = a + b;
-        //picks a random answer button and assigns c to it.
+        //sets text to c
         _answerText[randomAnswerIndex].text = c.ToString();
-        _answerText[randomAnswerIndex].GetComponentInParent<AnswerButton>()._correctAnswer = true;
+        //assign currentanswerbutton
+        _currentAnswerButton = _answerText[randomAnswerIndex].GetComponentInParent<AnswerButton>();
+        //set answer to true
+        _currentAnswerButton._correctAnswer = true;
+
         //assigns random values to the other button texts. 
         for(int i = 0; i < _answerText.Length; i++)
         {
@@ -63,9 +80,11 @@ public class MathGameManager : MonoBehaviour
     public void PlayerAttack()
     {
         _player.PlayAnimation("Attack");
+        AudioManager.Instance.PlaySwordSwingSFX(_attackSound[UnityEngine.Random.Range(0,_attackSound.Length)]);
     }
     public void EnemyAttack()
     {
         _enemy.PlayAnimation("Attack");
+        AudioManager.Instance.PlaySwordSwingSFX(_attackSound[UnityEngine.Random.Range(0, _attackSound.Length)]);
     }
 }

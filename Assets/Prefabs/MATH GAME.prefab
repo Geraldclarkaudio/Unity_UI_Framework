@@ -1043,6 +1043,11 @@ MonoBehaviour:
   - {fileID: 1472366173019761681}
   turn: 0
   _turnWon: 0
+  _currentAnswerButton: {fileID: 0}
+  _attackSound:
+  - {fileID: 8300000, guid: 99bbb55e2afc36e4782a0b8434990be1, type: 3}
+  - {fileID: 8300000, guid: 3e9a1a3b3905f6f45b3bea4ff25dba41, type: 3}
+  - {fileID: 8300000, guid: 637b97c765ea50b4c92ee623b5556d92, type: 3}
 --- !u!1 &2248696606446791433
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class ProfilePlayButton : MonoBehaviour
 
     private void OnEnable()
     {
+        //_button.onClick.AddListener(AssignListeners);
         _button.onClick.AddListener(AssignListeners);
     }
     private void OnDisable()
@@ -29,24 +30,20 @@ public class ProfilePlayButton : MonoBehaviour
 
     private void AssignListeners()
     {
-        //unload current canvases.
-        _button.onClick.AddListener(canvasManager.DisableCurrentCanvases);
-        //fade out. 
-        _button.onClick.AddListener(() => fadeEvent.FadeOut());
+        canvasManager.DisableCurrentCanvases();
+        fadeEvent.FadeOut();
 
         switch (ID)
         {
             case 0:
-                _button.onClick.AddListener(() => canvasManager.EnableAppropriateCanvases("MathGame"));
+                canvasManager.EnableAppropriateCanvases("MathGame");
                 break;
             case 1:
-                _button.onClick.AddListener(() => canvasManager.EnableAppropriateCanvases("MatchingGame"));
+                canvasManager.EnableAppropriateCanvases("MatchingGame");
                 break;
             case 2:
-                _button.onClick.AddListener(() => canvasManager.EnableAppropriateCanvases("MatchingGame"));
+                canvasManager.EnableAppropriateCanvases("Bubble_Game");
                 break;
         }
-
-
     }
 }

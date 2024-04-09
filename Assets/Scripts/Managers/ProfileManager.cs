@@ -19,6 +19,15 @@ public class ProfileManager : MonoBehaviour
         ProfilePopUp _profilePopUp = FindObjectOfType<ProfilePopUp>(true);
         ProfilePlayButton _profilePlayButton = FindObjectOfType<ProfilePlayButton>(true);
 
+        if(selectedProfileIndex == 0)
+        {
+            profiles[selectedProfileIndex].level = PlayerPrefs.GetInt("CurrentLevel");
+        }
+        else if(selectedProfileIndex == 1)
+        {
+            profiles[selectedProfileIndex].level = PlayerPrefs.GetInt("CurrentScore");
+        }
+
         if (_profilePopUp != null)
         {
             _profilePopUp.gameObject.SetActive(true);
