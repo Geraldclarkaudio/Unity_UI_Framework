@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 /// <summary>
@@ -10,6 +11,11 @@ public class ProfileManager : MonoBehaviour
     [SerializeField]
     public int selectedProfileIndex = 0;
 
+    SaveManager saveManager;
+    private void Awake()
+    {
+        saveManager = FindObjectOfType<SaveManager>();
+    }
     public void SelectProfile(int index)
     {
         selectedProfileIndex = index;
@@ -21,11 +27,18 @@ public class ProfileManager : MonoBehaviour
 
         if(selectedProfileIndex == 0)
         {
-            profiles[selectedProfileIndex].level = PlayerPrefs.GetInt("CurrentLevel");
+            Debug.Log("YOU CLICKED PROFILE 1");
+            profiles[selectedProfileIndex].level = saveManager.loadedLevel;
         }
-        else if(selectedProfileIndex == 1)
+        if(selectedProfileIndex == 1)
         {
-            profiles[selectedProfileIndex].level = PlayerPrefs.GetInt("CurrentScore");
+            Debug.Log("YOU SELECTED PROFILE 2");
+            profiles[selectedProfileIndex].level = saveManager.loadedScore;
+        }
+        if (selectedProfileIndex == 2)
+        {
+            Debug.Log("YOU SELECTED PROFILE 3");
+            profiles[selectedProfileIndex].level = saveManager.loadedBubbles;
         }
 
         if (_profilePopUp != null)
@@ -42,7 +55,8 @@ public class ProfileManager : MonoBehaviour
 
     public void IncreaseLevel() //math game
     {
-        profiles[selectedProfileIndex].level ++;
+        profiles[selectedProfileIndex].level++;
+        saveManager.loadedLevel = profiles[selectedProfileIndex].level;
         PlayerPrefs.SetInt("CurrentLevel", profiles[selectedProfileIndex].level);
         PlayerPrefs.Save();
     }
@@ -50,7 +64,15 @@ public class ProfileManager : MonoBehaviour
     public void IncreaseScore() // matching Game
     {
         profiles[selectedProfileIndex].level++;
+        saveManager.loadedScore = profiles[selectedProfileIndex].level;
         PlayerPrefs.SetInt("CurrentScore", profiles[selectedProfileIndex].level);
+        PlayerPrefs.Save();
+    }
+    public void WinBubbles()
+    {
+        profiles[selectedProfileIndex].level = 1;
+        saveManager.loadedBubbles = profiles[selectedProfileIndex].level;
+        PlayerPrefs.SetInt("WonBubbles", profiles[selectedProfileIndex].level);
         PlayerPrefs.Save();
     }
 }

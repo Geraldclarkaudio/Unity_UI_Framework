@@ -490,6 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693e2807b0ea3434489f69966216c4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentPopOrder: 0
 --- !u!1 &2509520978946637697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,10 +1386,20 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b895ddd8db4a7a4eb3aa9bdd200abd0, type: 2}
+    - target: {fileID: 1976570583207337677, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
       propertyPath: m_Name
       value: Bubble (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
@@ -1533,6 +1544,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 6874173098104716347}
+  _canPop: 0
+  _popOrder: 0
 --- !u!224 &5360974287404073517 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
@@ -1564,10 +1577,20 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b895ddd8db4a7a4eb3aa9bdd200abd0, type: 2}
+    - target: {fileID: 1976570583207337677, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
       propertyPath: m_Name
       value: Bubble (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
@@ -1724,6 +1747,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 8066989226282025102}
+  _canPop: 0
+  _popOrder: 0
 --- !u!224 &8858662118943850136 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
@@ -1743,10 +1768,20 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b895ddd8db4a7a4eb3aa9bdd200abd0, type: 2}
+    - target: {fileID: 1976570583207337677, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
       propertyPath: m_Name
       value: Bubble (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
@@ -1903,6 +1938,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 7910651521042269243}
+  _canPop: 0
+  _popOrder: 0
 --- !u!224 &8704259696490068525 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
@@ -1922,10 +1959,20 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b895ddd8db4a7a4eb3aa9bdd200abd0, type: 2}
+    - target: {fileID: 1976570583207337677, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
       propertyPath: m_Name
       value: Bubble (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
@@ -2076,6 +2123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 8359300197351166381}
+  _canPop: 0
+  _popOrder: 0
 --- !u!114 &8359300197351166381 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5678601963867597844, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
@@ -2101,10 +2150,20 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b895ddd8db4a7a4eb3aa9bdd200abd0, type: 2}
+    - target: {fileID: 1976570583207337677, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
       propertyPath: m_Name
       value: Bubble (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
@@ -2249,6 +2308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 8490460588797391853}
+  _canPop: 0
+  _popOrder: 0
 --- !u!224 &6978280744000032251 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
@@ -2280,10 +2341,20 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b895ddd8db4a7a4eb3aa9bdd200abd0, type: 2}
+    - target: {fileID: 1976570583207337677, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
       propertyPath: m_Name
       value: Bubble (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
@@ -2446,6 +2517,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 224626862399156623}
+  _canPop: 0
+  _popOrder: 0
 --- !u!1001 &5708754593607805067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2459,10 +2532,20 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b895ddd8db4a7a4eb3aa9bdd200abd0, type: 2}
+    - target: {fileID: 1976570583207337677, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
       propertyPath: m_Name
       value: Bubble (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
@@ -2619,6 +2702,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 141828651388142751}
+  _canPop: 0
+  _popOrder: 0
 --- !u!224 &1509860219694119561 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
@@ -2767,10 +2852,20 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b895ddd8db4a7a4eb3aa9bdd200abd0, type: 2}
+    - target: {fileID: 1976570583207337677, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
       propertyPath: m_Name
       value: Bubble (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
@@ -2933,6 +3028,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 2964302522072105144}
+  _canPop: 0
+  _popOrder: 0
 --- !u!1001 &7506095973188695195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2946,6 +3043,11 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b895ddd8db4a7a4eb3aa9bdd200abd0, type: 2}
+    - target: {fileID: 1976570583207337677, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5678601963867597844, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
       propertyPath: m_fontSizeMin
@@ -2955,6 +3057,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
@@ -3096,6 +3203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 2802770461468858511}
+  _canPop: 0
+  _popOrder: 0
 --- !u!224 &3739827536484755097 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
@@ -3115,10 +3224,20 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 5b895ddd8db4a7a4eb3aa9bdd200abd0, type: 2}
+    - target: {fileID: 1976570583207337677, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
       propertyPath: m_Name
       value: Bubble (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599783948956994217, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
         type: 3}
@@ -3263,6 +3382,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 4383486886412388726}
+  _canPop: 0
+  _popOrder: 0
 --- !u!224 &3014807762159499104 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6615097156275737090, guid: 329f2b5f8f1e3e84098af8ab4a6875d1,
