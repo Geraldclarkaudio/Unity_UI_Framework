@@ -27,6 +27,7 @@ public class MathGameManager : MonoBehaviour
 
     [SerializeField]
     private AudioClip[] _attackSound;
+
     private void Start()
     {
         turn = 0;

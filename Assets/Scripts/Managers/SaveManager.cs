@@ -10,6 +10,10 @@ public class SaveManager : MonoBehaviour
     public int loadedScore;
     public int loadedBubbles;
 
+    public int game1loadedLevel;
+    public int game2loadedLevel;
+    public int game3loadedLevel;
+
     // Start is called before the first frame update
     void Awake()
     {   
@@ -18,19 +22,19 @@ public class SaveManager : MonoBehaviour
         if (PlayerPrefs.HasKey("CurrentLevel"))
         {
             Debug.Log("PlayerPrefs has key CurrentLevel");
-             loadedLevel = PlayerPrefs.GetInt("CurrentLevel");
+            game1loadedLevel = PlayerPrefs.GetInt("CurrentLevel");
         }
         if (PlayerPrefs.HasKey("CurrentScore"))
         {
             Debug.Log("PlayerPrefs has key CurrentScore");
 
-            loadedScore = PlayerPrefs.GetInt("CurrentScore");
+            game2loadedLevel = PlayerPrefs.GetInt("CurrentScore");
         }
         if (PlayerPrefs.HasKey("WonBubbles"))
         {
             Debug.Log("PlayerPrefs has key WonBubbles");
 
-            loadedBubbles = PlayerPrefs.GetInt("WonBubbles");
+            game3loadedLevel = PlayerPrefs.GetInt("WonBubbles");
         }
     }
 
@@ -38,15 +42,21 @@ public class SaveManager : MonoBehaviour
     {
         if(profileManager.selectedProfileIndex == 0)
         {
-            PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].level);
+            PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].game1Level);
+            PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].game2Level);
+            PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].game3Level);
         }
         if(profileManager.selectedProfileIndex == 1)
         {
-            PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].level);
+            PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].game1Level);
+            PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].game2Level);
+            PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].game3Level);
         }
         if(profileManager.selectedProfileIndex == 2)
         {
-            PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].level);
+            PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].game1Level);
+            PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].game2Level);
+            PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].game3Level);
         }
         PlayerPrefs.Save();
     }
@@ -56,15 +66,21 @@ public class SaveManager : MonoBehaviour
         {
             if (profileManager.selectedProfileIndex == 0)
             {
-                PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].level);
+                PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].game1Level);
+                PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].game2Level);
+                PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].game3Level);
             }
             if (profileManager.selectedProfileIndex == 1)
             {
-                PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].level);
+                PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].game1Level);
+                PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].game2Level);
+                PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].game3Level);
             }
             if (profileManager.selectedProfileIndex == 2)
             {
-                PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].level);
+                PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].game1Level);
+                PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].game2Level);
+                PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].game3Level);
             }
             PlayerPrefs.Save();
         }
@@ -73,15 +89,22 @@ public class SaveManager : MonoBehaviour
     {
         if (profileManager.selectedProfileIndex == 0)
         {
-            PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].level);
+            PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].game1Level);
+            PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].game2Level);
+            PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].game3Level);
+
         }
         if (profileManager.selectedProfileIndex == 1)
         {
-            PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].level);
+            PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].game1Level);
+            PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].game2Level);
+            PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].game3Level);
         }
         if (profileManager.selectedProfileIndex == 2)
         {
-            PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].level);
+            PlayerPrefs.SetInt("CurrentLevel", profileManager.profiles[profileManager.selectedProfileIndex].game1Level);
+            PlayerPrefs.SetInt("CurrentScore", profileManager.profiles[profileManager.selectedProfileIndex].game2Level);
+            PlayerPrefs.SetInt("WonBubbles", profileManager.profiles[profileManager.selectedProfileIndex].game3Level);
         }
         PlayerPrefs.Save();
     }

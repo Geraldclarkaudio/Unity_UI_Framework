@@ -1,38 +1,24 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class ProfilePlayButton : MonoBehaviour
+public class GameButton : MonoBehaviour
 {
-    Button _button;
     [SerializeField]
-    CanvasManager canvasManager;
+    private int _gameID;
+    private CanvasManager canvasManager;
     FadeEvent fadeEvent;
-    public int ID;
-
-    private void Awake()
+    private void Start()
     {
-        fadeEvent = FindObjectOfType<FadeEvent>();
-        _button = GetComponent<Button>();
         canvasManager = FindObjectOfType<CanvasManager>();
+        fadeEvent = FindObjectOfType<FadeEvent>();
     }
-
-    private void OnEnable()
-    {
-        //_button.onClick.AddListener(AssignListeners);
-    }
-    private void OnDisable()
-    {
-       // _button.onClick.RemoveListener(AssignListeners);
-    }
-
-    private void AssignListeners()
+    public void EnableGameCanvas()
     {
         canvasManager.DisableCurrentCanvases();
         fadeEvent.FadeOut();
 
-        switch (ID)
+        switch (_gameID)
         {
             case 0:
                 canvasManager.EnableAppropriateCanvases("MathGame");

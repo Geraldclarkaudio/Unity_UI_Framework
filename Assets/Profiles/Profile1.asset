@@ -16,3 +16,6 @@ MonoBehaviour:
   profileName: Profile 1
   level: 0
   ID: 0
+  game1Level: 0
+  game2Level: 0
+  game3Level: 1

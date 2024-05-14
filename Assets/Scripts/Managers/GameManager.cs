@@ -7,11 +7,18 @@ public class GameManager : MonoBehaviour
 {
     public bool gameWon;
     ProfileManager profileManager;
+
     private void OnEnable()
     {
         Enemy.OnDefeat += WinGame;
         Player.OnDefeat += LoseGame;
     }
+
+    private void Start()
+    {
+        profileManager = FindObjectOfType<ProfileManager>();
+    }
+
     public void WinGame()
     {
         gameWon = true;
@@ -19,10 +26,5 @@ public class GameManager : MonoBehaviour
     public void LoseGame()
     {
         gameWon = false;
-    }
-
-    private void Start()
-    {
-        profileManager = FindObjectOfType<ProfileManager>();    
     }
 }
