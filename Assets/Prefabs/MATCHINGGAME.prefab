@@ -316,6 +316,10 @@ MonoBehaviour:
   _answerArea: {fileID: 1361243163745731393}
   distance: 0
   dragging: 0
+  _draggableImages:
+  - {fileID: 1071456052443539908}
+  - {fileID: 663316461787651997}
+  - {fileID: 3107355296764186096}
 --- !u!114 &5754066660333985162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -844,6 +848,10 @@ MonoBehaviour:
   _answerArea: {fileID: 1361243163745731393}
   distance: 0
   dragging: 0
+  _draggableImages:
+  - {fileID: 1071456052443539908}
+  - {fileID: 663316461787651997}
+  - {fileID: 3107355296764186096}
 --- !u!114 &6091335975114933716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1797,6 +1805,10 @@ MonoBehaviour:
   _answerArea: {fileID: 1361243163745731393}
   distance: 0
   dragging: 0
+  _draggableImages:
+  - {fileID: 1071456052443539908}
+  - {fileID: 663316461787651997}
+  - {fileID: 3107355296764186096}
 --- !u!114 &134434715409327392
 MonoBehaviour:
   m_ObjectHideFlags: 0

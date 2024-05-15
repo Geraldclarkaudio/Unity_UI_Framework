@@ -25,6 +25,6 @@ public class AnswerIcon : MonoBehaviour
     }
     public void WrongAnswer()
     {
-
+        //wrong answer should do... something
     }
 }

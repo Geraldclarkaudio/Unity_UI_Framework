@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,15 @@ using UnityEngine;
 public class BubbleGameManager : MonoBehaviour
 {
     public int _currentPopOrder;
-    private bool _gameWon;
+    public bool _gameWon;
 
     private ProfileManager _profileManager;
-
+    private GameManager _gameManager;
+    public static Action onBubbleGameWin;
 
     private void Start()
     {
+        _gameManager = FindObjectOfType<GameManager>();
         _profileManager = FindObjectOfType<ProfileManager>();   
         _currentPopOrder = 1;
         _gameWon = false;
@@ -21,9 +24,12 @@ public class BubbleGameManager : MonoBehaviour
     {
         _currentPopOrder++;
         if(_currentPopOrder == 11){
-            Debug.Log("You Win");
             _gameWon=true;
+            _gameManager.bubblesWon = true;
             _profileManager.WinBubbles();
+            //go to results screen. 
+            onBubbleGameWin?.Invoke();
+
         }
     }
 }

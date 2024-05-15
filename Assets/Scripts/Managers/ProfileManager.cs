@@ -20,33 +20,30 @@ public class ProfileManager : MonoBehaviour
     public void SelectProfile(int index)
     {
         selectedProfileIndex = index;
-        //access the ProfilePopUp game object.
-        //Since this is a persistant class, I dont want to store a reference to this since
-        //it'll be destroyed once the scene changes to the game scene. 
         ProfilePopUp _profilePopUp = FindObjectOfType<ProfilePopUp>(true);
 
         if(selectedProfileIndex == 0)
         {
             Debug.Log("YOU CLICKED PROFILE 1");
             //check all the level info for each game and set it accordingly 
-            profiles[selectedProfileIndex].game1Level = saveManager.game1loadedLevel;
-            profiles[selectedProfileIndex].game2Level = saveManager.game2loadedLevel;
-            profiles[selectedProfileIndex].game3Level = saveManager.game3loadedLevel;
+            profiles[selectedProfileIndex].game1Level = saveManager.P1game1loadedLevel;
+            profiles[selectedProfileIndex].game2Level = saveManager.P1game2loadedLevel;
+            profiles[selectedProfileIndex].game3Level = saveManager.P1game3loadedLevel;
 
         }
         if (selectedProfileIndex == 1)
         {
             Debug.Log("YOU SELECTED PROFILE 2");
-            profiles[selectedProfileIndex].game1Level = saveManager.game1loadedLevel;
-            profiles[selectedProfileIndex].game2Level = saveManager.game2loadedLevel;
-            profiles[selectedProfileIndex].game3Level = saveManager.game3loadedLevel;
+            //profiles[selectedProfileIndex].game1Level = saveManager.game1loadedLevel;
+            //profiles[selectedProfileIndex].game2Level = saveManager.game2loadedLevel;
+            //profiles[selectedProfileIndex].game3Level = saveManager.game3loadedLevel;
         }
         if (selectedProfileIndex == 2)
         {
             Debug.Log("YOU SELECTED PROFILE 3");
-            profiles[selectedProfileIndex].game1Level = saveManager.game1loadedLevel;
-            profiles[selectedProfileIndex].game2Level = saveManager.game2loadedLevel;
-            profiles[selectedProfileIndex].game3Level = saveManager.game3loadedLevel;
+            //profiles[selectedProfileIndex].game1Level = saveManager.game1loadedLevel;
+            //profiles[selectedProfileIndex].game2Level = saveManager.game2loadedLevel;
+            //profiles[selectedProfileIndex].game3Level = saveManager.game3loadedLevel;
         }
 
         if (_profilePopUp != null) // just populate the profile pop up with proper data. 
@@ -62,24 +59,79 @@ public class ProfileManager : MonoBehaviour
 
     public void IncreaseLevel() //math game
     {
-        profiles[selectedProfileIndex].game1Level++; //increase the currently selected profile's game1Level by 1
-        saveManager.game1loadedLevel = profiles[selectedProfileIndex].game1Level; // set the savemanager's loaded value to the game1level value. 
-        PlayerPrefs.SetInt("CurrentLevel", profiles[selectedProfileIndex].game1Level);
+         //increase the currently selected profile's game1Level by 1
+        if(selectedProfileIndex == 0)
+        {
+            profiles[selectedProfileIndex].game1Level++;
+            saveManager.P1game1loadedLevel = profiles[selectedProfileIndex].game1Level; // set the savemanager's loaded value to the game1level value. 
+            PlayerPrefs.SetInt("CurrentLevel", profiles[selectedProfileIndex].game1Level);
+
+        }
+        if(selectedProfileIndex == 1)
+        {
+            profiles[selectedProfileIndex].game1Level++;
+            saveManager.P2game1loadedLevel = profiles[selectedProfileIndex].game1Level;
+            PlayerPrefs.SetInt("CurrentLevelP2", profiles[selectedProfileIndex].game1Level);
+        }
+        if(selectedProfileIndex == 2)
+        {
+            profiles[selectedProfileIndex].game1Level++;
+            saveManager.P3game1loadedLevel = profiles[selectedProfileIndex].game1Level;
+            PlayerPrefs.SetInt("CurrentLevelP3", profiles[selectedProfileIndex].game1Level);
+        }
         PlayerPrefs.Save();
     }
 
     public void IncreaseScore() // matching Game
     {
-        profiles[selectedProfileIndex].game2Level++;
-        saveManager.game2loadedLevel = profiles[selectedProfileIndex].game2Level;
-        PlayerPrefs.SetInt("CurrentScore", profiles[selectedProfileIndex].game2Level);
+        if(selectedProfileIndex == 0)
+        {
+            profiles[selectedProfileIndex].game2Level++;
+
+            saveManager.P1game2loadedLevel = profiles[selectedProfileIndex].game2Level;
+            PlayerPrefs.SetInt("CurrentScore", profiles[selectedProfileIndex].game2Level);
+        }
+        if (selectedProfileIndex == 1)
+        {
+            profiles[selectedProfileIndex].game2Level++;
+
+            saveManager.P2game2loadedLevel = profiles[selectedProfileIndex].game2Level;
+            PlayerPrefs.SetInt("CurrentScoreP2", profiles[selectedProfileIndex].game2Level);
+        }
+        if (selectedProfileIndex == 2)
+        {
+            profiles[selectedProfileIndex].game2Level++;
+
+            saveManager.P3game2loadedLevel = profiles[selectedProfileIndex].game2Level;
+            PlayerPrefs.SetInt("CurrentScoreP3", profiles[selectedProfileIndex].game2Level);
+        }
+
         PlayerPrefs.Save();
     }
     public void WinBubbles()
     {
-        profiles[selectedProfileIndex].game3Level = 1;
-        saveManager.game3loadedLevel = profiles[selectedProfileIndex].game3Level;
-        PlayerPrefs.SetInt("WonBubbles", profiles[selectedProfileIndex].game3Level);
+        if(selectedProfileIndex == 0)
+        {
+            profiles[selectedProfileIndex].game3Level = 1;
+
+            saveManager.P1game3loadedLevel = profiles[selectedProfileIndex].game3Level;
+            PlayerPrefs.SetInt("WonBubbles", profiles[selectedProfileIndex].game3Level);
+        }
+        if (selectedProfileIndex == 1)
+        {
+            profiles[selectedProfileIndex].game3Level = 1;
+
+            saveManager.P2game3loadedLevel = profiles[selectedProfileIndex].game3Level;
+            PlayerPrefs.SetInt("WonBubblesP2", profiles[selectedProfileIndex].game3Level);
+        }
+        if (selectedProfileIndex == 2)
+        {
+            profiles[selectedProfileIndex].game3Level = 1;
+
+            saveManager.P3game3loadedLevel = profiles[selectedProfileIndex].game3Level;
+            PlayerPrefs.SetInt("WonBubblesP3", profiles[selectedProfileIndex].game3Level);
+        }
+
         PlayerPrefs.Save();
     }
 }

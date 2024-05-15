@@ -17,6 +17,7 @@ public class CanvasManager : MonoBehaviour
     {
         Enemy.OnDefeat += GoToResults;
         Player.OnDefeat += GoToResults;
+        BubbleGameManager.onBubbleGameWin += GoToResults;
     }
     private void Start()
     {

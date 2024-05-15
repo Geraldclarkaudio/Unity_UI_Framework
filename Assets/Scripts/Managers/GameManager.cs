@@ -6,22 +6,19 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool gameWon;
-    ProfileManager profileManager;
-
+    public bool bubblesWon;
     private void OnEnable()
     {
         Enemy.OnDefeat += WinGame;
         Player.OnDefeat += LoseGame;
     }
-
-    private void Start()
-    {
-        profileManager = FindObjectOfType<ProfileManager>();
-    }
-
     public void WinGame()
     {
         gameWon = true;
+    }
+    public void WinBubbleGame()
+    {
+        bubblesWon = true;
     }
     public void LoseGame()
     {

@@ -42,7 +42,7 @@ public class MatchingGameManager : MonoBehaviour
     private void Start()
     {
         _profileManager = FindObjectOfType<ProfileManager>();
-        _score = _profileManager.profiles[_profileManager.selectedProfileIndex].level;
+        _score = _profileManager.profiles[_profileManager.selectedProfileIndex].game2Level;
         _gameUI.UpdateScoreText(_score);
         StartGame();
     }

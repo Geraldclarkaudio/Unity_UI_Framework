@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ResultsManager : MonoBehaviour
 {
     private GameManager _gameManager;
-
+    private BubbleGameManager _bubbleGameManager;
     [SerializeField]
     private Image _backgroundImage;
     [SerializeField]
@@ -24,7 +24,7 @@ public class ResultsManager : MonoBehaviour
     }
     public void SetBackgroundImageAndText()
     {
-        if (_gameManager.gameWon == true)
+        if (_gameManager.gameWon == true || _gameManager.bubblesWon == true)
         {
             _backgroundImage.sprite = _winBG;
             _text.text = "You Win!";

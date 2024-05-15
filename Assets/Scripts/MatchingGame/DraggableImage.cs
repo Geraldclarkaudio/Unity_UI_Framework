@@ -16,9 +16,13 @@ public class DraggableImage : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
     private float distance;
     public bool dragging;
     AnswerIcon _answerIcon;
-
+    [SerializeField]
+    private bool _canDrag = true;
     public static Action onResetGame;
     public static Action onScored;
+
+    public DraggableImage[] _draggableImages;
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -29,15 +33,22 @@ public class DraggableImage : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        // Save the initial position when dragging starts
-        initialPosition = rectTransform.anchoredPosition;
+        if(_canDrag == true)
+        {
+            // Save the initial position when dragging starts
+            initialPosition = rectTransform.anchoredPosition;
+        }
+
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        dragging = true;
-        // Update the position based on drag input
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if(_canDrag == true)
+        {
+            dragging = true;
+            // Update the position based on drag input
+            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -59,6 +70,10 @@ public class DraggableImage : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
                 UpdateScore();
                 _answerIcon.CelebrationVFX();
                 rectTransform.position = _answerArea.position;
+                foreach (var image in _draggableImages)
+                {
+                    image._canDrag = false;
+                }
                 Invoke("ResetGame", 3.0f);
             }
         }
@@ -75,6 +90,10 @@ public class DraggableImage : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
         rectTransform.anchoredPosition = initialPosition;
         if(onResetGame != null)
             onResetGame();
+        foreach (var image in _draggableImages)
+        {
+            image._canDrag = true;
+        }
     }
 
     private void Update()

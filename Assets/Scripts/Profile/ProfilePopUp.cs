@@ -12,10 +12,6 @@ public class ProfilePopUp : MonoBehaviour
     [SerializeField]
     private TMP_Text _profileName;
     [SerializeField]
-    private Slider _profileLevelSlider;
-    [SerializeField]
-    private TMP_Text _profileLevel;
-    [SerializeField]
     private int _profileID;
     private Animator _animator;
 

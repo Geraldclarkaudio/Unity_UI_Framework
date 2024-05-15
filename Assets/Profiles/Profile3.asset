@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatar: {fileID: 21300000, guid: 8a284ab4c862b49079dd4143d84349c6, type: 3}
   profileName: Profile 3
-  level: 0
   ID: 2
   game1Level: 0
   game2Level: 0
-  game3Level: 1
+  game3Level: 0
