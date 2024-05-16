@@ -53,30 +53,35 @@ public class DraggableImage : MonoBehaviour, IDragHandler, IBeginDragHandler, IE
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        dragging = false;
-        // Snap back to the initial position when dragging ends
-        if (distance > 250) {
-            rectTransform.anchoredPosition = initialPosition;
-        }
-        else
+        if(_canDrag == true)
         {
-            if(_answerIcon.answer == false) // wrong? 
+            dragging = false;
+            // Snap back to the initial position when dragging ends
+            if (distance > 250)
             {
-                _answerIcon.WrongAnswer();
                 rectTransform.anchoredPosition = initialPosition;
             }
-            else // right 
+            else
             {
-                UpdateScore();
-                _answerIcon.CelebrationVFX();
-                rectTransform.position = _answerArea.position;
-                foreach (var image in _draggableImages)
+                if (_answerIcon.answer == false) // wrong? 
                 {
-                    image._canDrag = false;
+                    _answerIcon.WrongAnswer();
+                    rectTransform.anchoredPosition = initialPosition;
                 }
-                Invoke("ResetGame", 3.0f);
+                else // right 
+                {
+                    UpdateScore();
+                    _answerIcon.CelebrationVFX();
+                    rectTransform.position = _answerArea.position;
+                    foreach (var image in _draggableImages)
+                    {
+                        image._canDrag = false;
+                    }
+                    Invoke("ResetGame", 3.0f);
+                }
             }
         }
+       
     }
 
     public void UpdateScore()
